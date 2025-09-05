@@ -56,7 +56,7 @@ qa-web-automation/
 git clone https://github.com/erogers91/qa-web-automation.git
 cd qa-web-automation
 yarn install
-yarn dlx playwright install
+npx playwright install --with-deps
 ```
 
 ### 2. Configure environment variables
@@ -93,3 +93,7 @@ Runs on every push to main and every pull request.
 Installs dependencies, runs Playwright tests, and uploads an HTML report as an artifact.
 
 Uses GitHub Secrets for credentials (BASE_URL, ADMIN_USER, etc.).
+
+### 5. Example of report
+<img width="998" height="899" alt="image" src="https://github.com/user-attachments/assets/5d9e952a-4e92-4f8c-8787-6feaa2ced199" />
+
