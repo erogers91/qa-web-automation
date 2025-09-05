@@ -56,7 +56,7 @@ qa-web-automation/
 git clone https://github.com/erogers91/qa-web-automation.git
 cd qa-web-automation
 yarn install
-yarn dlx playwright install
+npx playwright install --with-deps
 ```
 
 ### 2. Configure environment variables
