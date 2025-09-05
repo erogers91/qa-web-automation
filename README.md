@@ -61,10 +61,15 @@ yarn dlx playwright install
 
 ### 2. Configure environment variables
 Create a .env file based on .env.example:
+
 BASE_URL=https://www.saucedemo.com/
+
 ADMIN_USER=standard_user
+
 ADMIN_PASS=secret_sauce
+
 USER_USER=problem_user
+
 USER_PASS=secret_sauce
 
 ### 3. Running Tests
