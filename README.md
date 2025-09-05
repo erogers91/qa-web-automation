@@ -17,21 +17,37 @@ It includes Page Object Models, role-based tests, environment variables, and Git
 
 ## Project Structure
 qa-web-automation/
-├─ .github/workflows/ci.yml # GitHub Actions workflow
+
+├─ .github/workflows/ci.yml
+
 ├─ tests/
+
 │ ├─ e2e/ # End-to-end tests
+
 │ │ ├─ auth.spec.ts
+
 │ │ └─ entitlement.spec.ts
+
 │ ├─ pages/ # Page Objects
+
 │ │ ├─ LoginPage.ts
+
 │ │ └─ InventoryPage.ts
+
 │ ├─ fixtures/ # Roles, test data
+
 │ │ └─ roles.ts
-│ └─ utils/ # Helpers (future use)
+
+│ └─ utils/ # Helpers
+
 ├─ .env.example # Example environment vars
+
 ├─ playwright.config.ts # Playwright config
+
 ├─ package.json
+
 ├─ yarn.lock
+
 └─ README.md
 
 ## 🛠 Setup
@@ -54,16 +70,21 @@ USER_PASS=secret_sauce
 ### 3. Running Tests
 Run all tests (headless):
 yarn test
+
 Run in headed mode:
 yarn test:headed
+
 Open the Playwright Test UI:
 yarn test:ui
+
 View HTML report:
 yarn report
 
 ### 4. CI/CD (GitHub Actions)
-
 Workflow: .github/workflows/ci.yml
+
 Runs on every push to main and every pull request.
+
 Installs dependencies, runs Playwright tests, and uploads an HTML report as an artifact.
+
 Uses GitHub Secrets for credentials (BASE_URL, ADMIN_USER, etc.).
