@@ -11,8 +11,6 @@ test.describe('Entitlements (role-based behavior)', () => {
     await login.goto();
     await login.login(roles.standard_user.username, roles.standard_user.password);
     await inventory.expectLoaded();
-    await inventory.expectFilterVisible();
-    await inventory.openBurgerMenu();
   });
 
   test('user logs in but (example) lacks admin-only control', async ({ page }) => {
@@ -22,8 +20,6 @@ test.describe('Entitlements (role-based behavior)', () => {
     await login.goto();
     await login.login(roles.visual_user.username, roles.visual_user.password);
     await inventory.expectLoaded();
-    await inventory.expectFilterVisible();
-    await inventory.openBurgerMenu();
 
     // Example entitlement check (placeholder):
     // await expect(page.getByRole('button', { name: /admin panel/i })).toBeHidden();

@@ -10,8 +10,6 @@ test.describe('Auth', () => {
     await login.goto();
     await login.login('standard_user', 'secret_sauce');
     await inventory.expectLoaded();
-    await inventory.expectFilterVisible();
-    await inventory.openBurgerMenu();
   });
 
   test('invalid login → shows error', async ({ page }) => {

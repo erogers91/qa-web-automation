@@ -9,7 +9,9 @@ export class InventoryPage {
   constructor(private page: Page) {
     this.title = this.page.getByText('Products', { exact: true });
     this.logo = this.page.getByText('Swag Labs', { exact: true });
+
     this.burgerMenu = this.page.getByRole('button', { name: /open menu/i });
+    
     this.filter = this.page.getByRole('combobox');
   }
 
@@ -29,6 +31,26 @@ export class InventoryPage {
   async openBurgerMenu() {
     await test.step('Open burger menu', async () => {
       await this.burgerMenu.click();
+    });
+  }
+
+  get firstAddToCartBtn() { 
+  return this.page.getByRole('button', { name: /add to cart/i }).first(); 
+  }
+
+  get cartIcon() { 
+    return this.page.getByTestId('shopping-cart-link'); 
+  }
+
+  async addFirstItemToCart() {
+    await test.step('Add first item to cart', async () => {
+      await this.firstAddToCartBtn.click();
+    });
+  }
+
+  async openCart() {
+    await test.step('Open cart page from header', async () => {
+      await this.cartIcon.click();
     });
   }
 }
